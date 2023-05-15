@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include <algorithm>
 #include <numeric>
 #include <Eigen/Dense>
 
@@ -114,7 +113,7 @@ vector<vector<double>> find_convex_hull() {
 
             for (int i = 0; i < d + 1; ++i) {
                 int max_point_index = -1;
-                double max_dot_product = -1e18;
+                double max_dot_product = -INFINITY;
                 for (int j = 0; j < p.size(); ++j) {
                     double dp = dot_product(dirs[i], p[j]);
                     if (dp > max_dot_product) {
